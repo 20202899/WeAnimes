@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in HomeViewController.bindUI():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self?.homeViewModel.paginateOffset.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.collectionView(_:cellForItemAt:):HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data.attributes.posterImage.medium">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AnimeCollectionViewCell.bindUI():AnimeCollectionViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "urlRequest.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

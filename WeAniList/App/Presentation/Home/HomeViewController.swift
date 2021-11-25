@@ -73,10 +73,6 @@ class HomeViewController: BaseViewController {
         
         self.homeViewModel.isLoading.accept(true)
     }
-    
-    @objc func clickWindow(sender: UIWindow) {
-        Loading.shared.remove()
-    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {

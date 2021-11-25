@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Images">
+      <FileRef
+         location = "group:/Users/carlossilva/Documents/DevCarlos/WeAnimes/image1.png">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/carlossilva/Documents/DevCarlos/WeAnimes/image2.png">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/carlossilva/Documents/DevCarlos/WeAnimes/image3.png">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:WeAniList.xcodeproj">
    </FileRef>

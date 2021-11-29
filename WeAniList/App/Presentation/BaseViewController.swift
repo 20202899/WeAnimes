@@ -9,6 +9,17 @@ import UIKit
 import Lottie
 
 class BaseViewController: UIViewController {
+    lazy var rightBarButton: UIBarButtonItem = {
+        let view = AnimationView(name: "close")
+        view.frame = .init(x: .zero, y: .zero, width: 24, height: 24)
+        view.play(toProgress: .zero)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(rightOnClick)))
+        let barButton = UIBarButtonItem(customView: view)
+        return barButton
+    }()
+    
+    var rightBarButtonOnClick: (() -> Void)?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupHeader()
@@ -16,6 +27,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = rightBarButton
         self.setupUI()
         self.bindUI()
     }
@@ -46,10 +58,27 @@ class BaseViewController: UIViewController {
     }
     
     open func setupUI() {
-        
     }
     
     open func bindUI() {
-        
+    }
+    
+    open func menuAnimateBy(progress: AnimationProgressTime) {
+        if let animatedView = rightBarButton.customView as? AnimationView {
+            animatedView.play(toProgress: progress)
+        }
+    }
+    
+    open func menuAnimateBy(frame: AnimationFrameTime) {
+        if let animatedView = rightBarButton.customView as? AnimationView {
+            animatedView.play(toFrame: frame)
+        }
+    }
+    
+    @objc private func rightOnClick(sender: AnimationView) {
+        if let anim = rightBarButton.customView as? AnimationView {
+            anim.play(toProgress: 0.031)
+            rightBarButtonOnClick?()
+        }
     }
 }

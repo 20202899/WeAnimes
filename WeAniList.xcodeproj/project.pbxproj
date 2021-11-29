@@ -28,6 +28,8 @@
 		6AE193B82748BD03001B53AA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE193B72748BD03001B53AA /* HomeModel.swift */; };
 		6AE193C12748BE7D001B53AA /* AnimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE193C02748BE7D001B53AA /* AnimeRepository.swift */; };
 		A239786E434F0798CF5A6DA9 /* Pods_WeAniList_WeAniListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13C6E3708AADE38B44DFBB3 /* Pods_WeAniList_WeAniListUITests.framework */; };
+		A616E09027500C69002C6529 /* close.json in Resources */ = {isa = PBXBuildFile; fileRef = A616E08F27500C69002C6529 /* close.json */; };
+		A616E09627501443002C6529 /* MyAnimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A616E09527501443002C6529 /* MyAnimesViewController.swift */; };
 		BC56FE0C37E2B574E088D43D /* Pods_WeAniListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694143DC8137B6B6B0EACCAB /* Pods_WeAniListTests.framework */; };
 		D92CFE3413BDE9597C76BF8B /* Pods_WeAniList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52953B1BF8931666A19B2CD /* Pods_WeAniList.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		6AE193C02748BE7D001B53AA /* AnimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeRepository.swift; sourceTree = "<group>"; };
 		85DC9E2BCC490F518473DB60 /* Pods-WeAniListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeAniListTests.release.xcconfig"; path = "Target Support Files/Pods-WeAniListTests/Pods-WeAniListTests.release.xcconfig"; sourceTree = "<group>"; };
 		881AE39AAB3E46F718C8E4CB /* Pods-WeAniList-WeAniListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeAniList-WeAniListUITests.debug.xcconfig"; path = "Target Support Files/Pods-WeAniList-WeAniListUITests/Pods-WeAniList-WeAniListUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A616E08F27500C69002C6529 /* close.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = close.json; sourceTree = "<group>"; };
+		A616E09527501443002C6529 /* MyAnimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnimesViewController.swift; sourceTree = "<group>"; };
 		D13C6E3708AADE38B44DFBB3 /* Pods_WeAniList_WeAniListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeAniList_WeAniListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52953B1BF8931666A19B2CD /* Pods_WeAniList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeAniList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA65A4BD8A8779CE8645D213 /* Pods-WeAniList-WeAniListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeAniList-WeAniListUITests.release.xcconfig"; path = "Target Support Files/Pods-WeAniList-WeAniListUITests/Pods-WeAniList-WeAniListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				6A299B94274F14100000B5F5 /* loading.json */,
+				A616E08F27500C69002C6529 /* close.json */,
 				6AE192B92742C562001B53AA /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -145,6 +150,7 @@
 		6A299B78274F0E380000B5F5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				6A299B6C274F00540000B5F5 /* Components */,
 				6AE193B62748BCD3001B53AA /* Model */,
 				6AE192E42742C590001B53AA /* Presentation */,
 				6AE192E32742C57C001B53AA /* Data */,
@@ -234,7 +240,7 @@
 		6AE192E42742C590001B53AA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				6A299B6C274F00540000B5F5 /* Components */,
+				A616E09427501426002C6529 /* MyAnimes */,
 				6AE193B02748BC7C001B53AA /* Home */,
 				6AE193512748B45F001B53AA /* BaseViewController.swift */,
 			);
@@ -298,6 +304,14 @@
 				85DC9E2BCC490F518473DB60 /* Pods-WeAniListTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A616E09427501426002C6529 /* MyAnimes */ = {
+			isa = PBXGroup;
+			children = (
+				A616E09527501443002C6529 /* MyAnimesViewController.swift */,
+			);
+			path = MyAnimes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A616E09027500C69002C6529 /* close.json in Resources */,
 				6AE192BD2742C562001B53AA /* LaunchScreen.storyboard in Resources */,
 				6AE192BA2742C562001B53AA /* Assets.xcassets in Resources */,
 				6A299B95274F14100000B5F5 /* loading.json in Resources */,
@@ -547,6 +562,7 @@
 				6AE192AE2742C560001B53AA /* AppDelegate.swift in Sources */,
 				6A299B6E274F00A40000B5F5 /* Loading.swift in Sources */,
 				6AE193C12748BE7D001B53AA /* AnimeRepository.swift in Sources */,
+				A616E09627501443002C6529 /* MyAnimesViewController.swift in Sources */,
 				6AE192B82742C560001B53AA /* WeAniList.xcdatamodeld in Sources */,
 				6AE193522748B45F001B53AA /* BaseViewController.swift in Sources */,
 				6AE192B02742C560001B53AA /* SceneDelegate.swift in Sources */,

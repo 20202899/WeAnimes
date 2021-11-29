@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SwiftUI
+import Lottie
 
 class HomeViewController: BaseViewController {
     private let disposeBagUI = DisposeBag()
@@ -48,7 +49,7 @@ class HomeViewController: BaseViewController {
             top: (self.view.topAnchor, .zero),
             left: (self.view.leftAnchor, .zero),
             right: (self.view.rightAnchor, .zero),
-            bottom: (self.view.safeAreaLayoutGuide.bottomAnchor, .zero)
+            bottom: (self.view.bottomAnchor, .zero)
         )
     }
     
@@ -70,6 +71,12 @@ class HomeViewController: BaseViewController {
                     return IndexPath(row: index, section: .zero)
                 })
             }).disposed(by: self.disposeBagUI)
+        
+        self.rightBarButtonOnClick = { [weak self] in
+            guard let self = self else { return }
+            let vc = MyAnimesViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         self.homeViewModel.isLoading.accept(true)
     }

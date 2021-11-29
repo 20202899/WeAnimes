@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 class AnimeCollectionViewCell: UICollectionViewCell {
     static let identifier = String(describing: self)

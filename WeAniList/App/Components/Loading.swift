@@ -18,7 +18,7 @@ final class Loading {
         view.backgroundColor = .black
         view.loopMode = .loop
         view.play()
-        view.alpha = 0.97
+        view.alpha = 0.98
         
         view.frame = bounds
         view.tag = self.tagView
@@ -31,7 +31,7 @@ final class Loading {
     }
     
     func remove() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.removeView()
         }
     }

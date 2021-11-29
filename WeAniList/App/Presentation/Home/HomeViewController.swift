@@ -11,7 +11,7 @@ import RxCocoa
 import SwiftUI
 import Lottie
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController, BarButtonActionAnimatable {
     private let disposeBagUI = DisposeBag()
     private let homeViewModel: HomeViewModel
     
@@ -38,6 +38,8 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "Animes".uppercased()
+        
+        self.barButtonMenuAnimAction(barButtonAnimableType: (from: 1 , to: .zero))
     }
     
     override func setupUI() {
@@ -78,7 +80,15 @@ class HomeViewController: BaseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        self.navigationItem.leftBarButtonItem?.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(leftbarButtonClick)))
+        
         self.homeViewModel.isLoading.accept(true)
+    }
+    
+    @objc private func leftbarButtonClick(sender: UITapGestureRecognizer) {
+        barButtonMenuAnimAction(barButtonAnimableType: (from: .zero , to: 0.3)) {
+            self.navigationController?.pushViewController(MyAnimesViewController(), animated: true)
+        }
     }
 }
 
